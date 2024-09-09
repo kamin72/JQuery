@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>搜尋商品</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("#productName").on("input", function () {
+          searchProduct();
+        });
+
+        function searchProduct() {
+          let productName = $("#productName").val();
+
+          $("li").each(function () {
+            let item = $(this).attr("data-item");
+            console.log(item);
+            if (item.indexOf(productName) != -1) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" id="productName" placeholder="搜尋商品" />
+    <ul>
+      <li data-item="鼠尾草"><a href="#">鼠尾草</a></li>
+      <li data-item="檸檬馬鞭草"><a href="#">檸檬馬鞭草</a></li>
+      <li data-item="刺五加"><a href="#">刺五加</a></li>
+      <li data-item="堇菜"><a href="#">堇菜</a></li>
+      <li data-item="西班牙薰衣草"><a href="#">西班牙薰衣草</a></li>
+      <li data-item="甜薰衣草"><a href="#">甜薰衣草</a></li>
+      <li data-item="艾草"><a href="#">艾草</a></li>
+      <li data-item="紫花貓鬚草"><a href="#">紫花貓鬚草</a></li>
+      <li data-item="藍雪花"><a href="#">藍雪花</a></li>
+      <li data-item="迷迭香"><a href="#">迷迭香</a></li>
+      <li data-item="檸檬香蜂草"><a href="#">檸檬香蜂草</a></li>
+      <li data-item="尤加利"><a href="#">尤加利</a></li>
+      <li data-item="玫瑰"><a href="#">玫瑰</a></li>
+      <li data-item="鬱金香"><a href="#">鬱金香</a></li>
+      <li data-item="康乃馨"><a href="#">康乃馨</a></li>
+      <li data-item="茉莉"><a href="#">茉莉</a></li>
+      <li data-item="山茶花"><a href="#">山茶花</a></li>
+    </ul>
+  </body>
+</html>

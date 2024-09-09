@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <style>
+      .target {
+        width: 750px;
+        height: 200px;
+        background-color: #666;
+      }
+      .circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 10px;
+      }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $(".circle").click(function () {
+          let theColor = $(this).css("backgroundColor");
+          $(".target").css("backgroundColor", theColor);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="target"></div>
+      <div class="colorPicker">
+        <div class="circle" style="background-color: red"></div>
+        <div class="circle" style="background-color: orange"></div>
+        <div class="circle" style="background-color: yellow"></div>
+        <div class="circle" style="background-color: green"></div>
+        <div class="circle" style="background-color: blue"></div>
+        <div class="circle" style="background-color: indigo"></div>
+        <div class="circle" style="background-color: violet"></div>
+        <div class="circle" style="background-color: black"></div>
+        <div class="circle" style="background-color: gray"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>textillate.js</title>
+    <link rel="stylesheet" href="./css/animate.css" />
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/jquery.lettering.js"></script>
+    <script src="./js/jquery.textillate.js"></script>
+    <!-- 不外乎就是調整default、extend、setting -->
+    <script>
+      $(function () {
+        $("#theText").textillate({
+          loop: true,
+          in: {
+            effect: "fadeIn",
+            delayScale: 1.5,
+            delay: 50,
+            sync: false,
+            reverse: false,
+            shuffle: false,
+            callback: function () {},
+          },
+          out: {
+            effect: "fadeOut",
+            delayScale: 1.5,
+            delay: 50,
+            sync: false,
+            reverse: false,
+            shuffle: true,
+            callback: function () {},
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="theText" style="font: 50px calibri">
+      Lorem ipsum dolor sit amet
+    </div>
+  </body>
+</html>

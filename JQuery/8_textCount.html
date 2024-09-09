@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        let textMax = $("#talk").attr("maxlength");
+        $("#feedback").html(
+          `<span style ='color:red;font-weight:bolder;font-size:22px'>${textMax} </span>characters remaining`
+        );
+        $("#talk").keyup(function () {
+          let textlength = $(this).val().length;
+          $("#feedback").html(
+            `<span style ='color:red;font-weight:bolder;font-size:22px'>${
+              textMax - textlength
+            } </span>characters remaining`
+          );
+          $("#content").text($(this).val()).css({
+            whiteSpace: "pre",
+            font: "13.33px monospace",
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <form>
+      <textarea id="talk" rows="5" cols="25" maxlength="100"></textarea>
+      <p id="feedback"></p>
+      <hr />
+      <p id="content"></p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>JQuery</title>
+    <style>
+      .theLabel {
+        text-transform: capitalize;
+        float: left;
+        width: 90px;
+      }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      // $(選取內容).處理方式()
+      // $(document).ready(function () {
+      //   $("input[type='text']").focus(function () {
+      //     $(this).css("background-color", "yellow");
+      //   });
+      // });
+      //另一種寫法
+
+      $(document).ready(function () {
+        // $("label").css({
+        //   textTransform: "capitalize",
+        //   float: "left",
+        //   width: "90px",
+        // });
+        $("label").addClass("theLabel");
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <label for="name">name: </label>
+      <input type="text" id="name" />
+    </p>
+    <p>
+      <label for="email">email: </label>
+      <input type="email" id="email" placeholder="Your email..." />
+    </p>
+    <p>
+      <label for="talk">comment: </label>
+      <textarea id="talk"></textarea>
+    </p>
+    <input type="submit" id="" value="click me" />
+    <input type="submit" id="" value="click us" />
+  </body>
+</html>

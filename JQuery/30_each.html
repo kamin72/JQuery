@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      // 語法:
+      // $(陣列).each(function(){})   // $(陣列).each(function(index,value){})
+      // $.each(陣列, function(){})
+
+      // $(物件).each(function(){})  // $(物件).each(function(key,value){})
+      // $.each(物件,function(){})
+
+      //   $(function () {
+      //     $("#theButton").click(function () {
+      //       let theText = "";
+      //       $(":text").each(function () {
+      //         theText += $(this).val() + " ";
+      //       });
+      //       $("#feedback").text(theText);
+      //     });
+      //   });
+
+      //判斷每個欄位都有輸入
+      $(function () {
+        $("#theButton").click(function () {
+          let theText = "";
+          let failed = false; //假設每個欄位都有輸入
+
+          $(":text").each(function () {
+            if ($(this).val() == "") {
+              failed = true;
+            }
+          });
+          if (failed == true) {
+            alert("請填寫空白處");
+          } else {
+            $(":text").each(function () {
+              theText += $(this).val() + " ";
+            });
+            $("#feedback").text(theText);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <input type="text" placeholder="first name" />
+      <input type="text" placeholder="middle name" />
+      <input type="text" placeholder="last name" />
+      <br />
+      <button id="theButton">Combine</button>
+    </p>
+    <div id="feedback"></div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #topMessage {
+        background-color: #666;
+        color: #eee;
+        font-size: 20px Tahoma;
+        text-align: center;
+        display: none;
+      }
+      #topMessage:hover {
+        cursor: pointer;
+        background-color: #abc;
+        color: #888;
+      }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $("#topMessage")
+          .slideDown(1500)
+          .click(function () {
+            $(this).slideUp(1000).delay(1000).slideDown(1500);
+            // $(this).slideToggle(1500, "easeOutSine");
+          });
+      });
+      $(function () {
+        $("#dialog").dialog();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="topMessage">
+      We see you're not logged in. Do you want to sign up?
+      <a href="#">sign up?</a>
+    </div>
+
+    <div id="dialog" title="Basic dialog">
+      <p>
+        This is the default dialog which is useful for displaying information.
+        The dialog window can be moved, resized and closed with the 'x' icon.
+      </p>
+    </div>
+  </body>
+</html>

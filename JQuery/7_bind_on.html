@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        /*
+           // $(選取物件).事件(處理函數).事件(處理函數);
+           $("p>span")
+             .mouseenter(function () {
+               $(this).addClass("highlight");
+             })
+             .mouseleave(function () {
+               $(this).removeClass("highlight");
+             });
+         });
+         */
+        //...............bind()...........
+        // 語法:  $(選取物件).bind(事件,處理函數)
+        // $("p>span").bind().bind()
+        /*
+           $("p>span")
+             .bind("mouseenter", function () {
+               $(this).addClass("highlight");
+             })
+             .bind("mouseleave", function () {
+               $(this).removeClass("highlight");
+             });
+             */
+        //...........on()...............
+        // 語法 1:  $(選取物件).on(事件,處理函數)
+        //   $("p>span").on().on();
+        /*
+         $("p>span").on("mouseenter mouseleave", function () {
+           $(this).toggleClass("highlight");
+         });
+      */
+        //語法 2: $(document).on(事件,物件,處理函數)
+        $(document).on("mouseenter mouseleave", "p>span", function () {
+          $(this).toggleClass("highlight");
+        });
+
+        //............on()的使用.......
+      });
+    </script>
+  </head>
+
+  <body>
+    <p><span>Lorem ipsum dolor sit amet.</span></p>
+  </body>
+</html>

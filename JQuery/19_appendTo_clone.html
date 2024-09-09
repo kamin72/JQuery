@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("#submitButton").click(function () {
+          // $("parent").append("child");
+          // $("child").append("parent");
+          //   $("span").appendTo("#feedback");
+          $("span").clone().appendTo("#feedback");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <button id="submitButton">Submit</button>
+    </p>
+    <span>Silvia</span>
+    <p id="feedback">My name is:</p>
+  </body>
+</html>

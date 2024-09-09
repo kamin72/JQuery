@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <style>
+      .textHover {
+        cursor: pointer;
+      }
+      #theDiv {
+        border: 1px solid #ccc;
+        padding: 5px;
+        color: #888;
+        position: absolute;
+        display: none;
+        background-color: #fff;
+      }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $(".textHover")
+          .mousemove(function (e) {
+            //偵測滑鼠移動時的x做標與y座標
+            //   $("#theDiv").show().text(`X: ${e.pageX} | Y: ${e.pageY}`);
+            //   let theText = $(this).attr("data-text");
+            //另一種寫法
+            let theText = $(this).data("text");
+            console.log(theText);
+            $("#theDiv")
+              .show()
+              .text(theText)
+              .css({
+                left: e.pageX + 10,
+                top: e.pageY + 10,
+              });
+          })
+          .mouseout(function () {
+            $("#theDiv").hide();
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <p>
+      <a
+        href="http://www.google.com.tw"
+        class="textHover"
+        data-text="Google, a powerful search engine."
+        >Google</a
+      >
+      |
+      <a
+        href="http://www.cafepress.com/"
+        class="textHover"
+        data-text="Cafepress is the world's best online gift shop."
+        >Cafepress</a
+      >
+      |
+      <a
+        href="http://www.bbc.com/news"
+        class="textHover"
+        data-text="BBC Trust publishes response to public consultation."
+        >BBC</a
+      >
+    </p>
+    <p>
+      <img
+        src="https://loremflickr.com/320/240/paris"
+        class="textHover"
+        data-text="Explore Paris holidays and discover the best time and places to visit." />
+    </p>
+    <div id="theDiv">Lorem ipsum dolor sit amet.</div>
+  </body>
+</html>

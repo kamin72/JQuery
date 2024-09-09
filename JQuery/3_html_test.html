@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>JQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      // $(選取內容).處理方式()
+      //   $(document).ready(function(){})
+      $(document).ready(function () {
+        // $("#theText").text(function () {
+        //   let ans = $("#theText").text();
+        //   console.log(ans);
+        // $("#theText").text("Does it make sense?");
+        $("#theText").html("<h1 style= 'color:red'>Does it make sense?</h1>");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="theText">Lorem ipsum dolor sit amet.</div>
+  </body>
+</html>

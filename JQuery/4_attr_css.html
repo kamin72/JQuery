@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>JQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      // $(選取內容).處理方式()
+      // $(document).ready(function () {
+      //   $("input[type='text']").focus(function () {
+      //     $(this).css("background-color", "yellow");
+      //   });
+      // });
+      //另一種寫法
+
+      $(document).ready(function () {
+        $(":text")
+          .focus(function () {
+            $(this).css("background-color", "yellow");
+          })
+          .blur(function () {
+            $(this).css("backgroundColor", "white");
+          });
+        $("input[type='email']")
+          .focus(function () {
+            $(this).css("background-color", "red");
+          })
+          .blur(function () {
+            $(this).css("backgroundColor", "white");
+          });
+        //  $("label").css("text-transform","capitalize")
+        $("label").css({
+          textTransform: "capitalize",
+          float: "left",
+          width: "90px",
+        });
+
+        // alert($("textarea").css("font")); //13.3333px monospace
+        // $("textarea").focus().blur()
+        $("textarea")
+          .focus(function () {
+            // $(this).attr("rows", 5).attr("cols", 20);
+            $(this)
+              .attr({
+                rows: 5,
+                cols: 25,
+              })
+              .css({
+                backgroundColor: "yellow",
+                fontSize: "16px",
+              });
+          })
+          .blur(function () {
+            $(this)
+              .attr({
+                rows: 2,
+                cols: 20,
+              })
+              .css({
+                backgroundColor: "white",
+                fontSize: "13.33px",
+              });
+          });
+        $(":submit").click(function () {
+          $(this).val("please wait...");
+        });
+        $("input[type ='email']")
+          .focus(function () {
+            $(this).attr("placeholder", "");
+          })
+          .blur(function () {
+            if ($(this).val() == "") {
+              $(this).attr("placeholder", "Example@icloud.com");
+            }
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <label for="name">name: </label>
+      <input type="text" id="name" />
+    </p>
+    <p>
+      <label for="email">email: </label>
+      <input type="email" id="email" placeholder="Your email..." />
+    </p>
+    <p>
+      <label for="talk">comment: </label>
+      <textarea id="talk"></textarea>
+    </p>
+    <input type="submit" id="" value="click me" />
+    <input type="submit" id="" value="click us" />
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        $("img")
+          .css("opacity", 0.5)
+          .mouseover(function () {
+            // $(this).css("opacity", 1);
+            $(this).fadeTo(500, 1);
+            $("img").not(this).fadeTo(500, 0.5);
+            // [其他的]: 全部($("img))除了你(not(this))以外
+          })
+          .mouseleave(function () {
+            $(this).stop(true).fadeTo(500, 0.5);
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+      <img src="../images/bg008.gif" />
+    </div>
+  </body>
+</html>

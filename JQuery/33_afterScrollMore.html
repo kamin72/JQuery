@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: url(../images/bg100.png);
+      }
+      #skin {
+        height: 2000px;
+      }
+      #skin p {
+        width: 100%;
+        position: fixed;
+        top: 200px;
+        text-align: center;
+        font: 25px tahoma;
+      }
+      .toBottom {
+        color: red;
+      }
+    </style>
+    <script>
+      $(function () {
+        $(window).scroll(function () {
+          let scroll_top = Math.round($(this).scrollTop());
+          let window_height = $(window).height();
+          let document_height = $(document).outerHeight();
+          // let document_height = $(document).height();
+
+          console.log(document_height); //返回undefine
+          $("#skin p span").text(scroll_top);
+          if (scroll_top == document_height - window_height) {
+            $("#skin p span").addClass("toBottom");
+          } else {
+            $("#skin p span").removeClass("toBottom");
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="skin">
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+      <p>scrollTop: <span>0</span> px</p>
+    </div>
+  </body>
+</html>

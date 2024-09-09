@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <style>
+      .menu {
+        list-style: none;
+        padding-inline-start: 20px;
+        font-family: Calibri;
+      }
+      .bold {
+        font: bold 28px Calibri;
+      }
+    </style>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        // $(".name li:nth-child(1)").append("(first)");
+        // $(".name li:eq(0)").append("(first)");
+        // $(".name li:first").append("(first)");
+        // 語法: $(物件).find(子孫).處理方法
+        $(".name li").first().append("(first)");
+        $(".name").find("li").last().append("(last)");
+        $(".name").find("li").first().next().append("(second)");
+        //.......................................................
+        // $(".menu").find("li").first().addClass("bold");
+        // $(".menu").find("li").first().addClass("bold").nextAll().hide();
+        // $(".menu")
+        //   .find("li")
+        //   .first()
+        //   .addClass("bold")
+        //   .click(function () {
+        //     $(this).nextAll().toggle();
+        //   })
+        //   .nextAll()
+        //   .hide();
+        $(".menu")
+          .find("li")
+          .first()
+          .addClass("bold")
+          .click(function () {
+            $(this).nextAll().slideToggle(500);
+          })
+          .nextAll()
+          .hide();
+      });
+    </script>
+  </head>
+
+  <body>
+    <ul class="name">
+      <li>Alex</li>
+      <li>Brian</li>
+      <li>Carl</li>
+      <li>Dale</li>
+      <li>Eric</li>
+    </ul>
+    <hr />
+
+    <ul class="menu">
+      <li>User (會員中心)</li>
+      <li>Setting</li>
+      <li>Log out</li>
+      <li>Delete Account</li>
+      <li>Something else</li>
+      <li>Do nothing</li>
+    </ul>
+  </body>
+</html>

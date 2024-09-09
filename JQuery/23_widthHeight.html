@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+      $(function () {
+        //CSS
+        // let imgWidth = $("img").css("width");
+        // let imgHeight = $("img").css("height");
+        //HTML---(X)
+        // let imgWidth = $("img").attr("width");
+        // let imgHeight = $("img").attr("height");
+        //JQuery
+        // let imgWidth = $("img").width();
+        // let imgHeight = $("img").height();
+        // $("#feedback").text(`Width: ${imgWidth}|Height: ${imgHeight}`);
+        let windowWidth = $(window).width();
+        let windowHeght = $(window).height();
+
+        $("#feedback").text(`Width: ${windowWidth}|Height: ${windowHeght}`);
+      });
+    </script>
+  </head>
+  <body>
+    <img src="../images/limes.jpg" />
+    <div id="feedback"></div>
+  </body>
+</html>

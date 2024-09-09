@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(function () {
+        $(".Condiment").click(function () {
+          let item = $(this).text();
+          $("#Condiment").append(`<td>${item}</td>`);
+        });
+        $(".Deli").click(function () {
+          let item = $(this).text();
+          $("#Deli").append(`<td>${item}</td>`);
+        });
+        $(".Beverage").click(function () {
+          let item = $(this).text();
+          $("#Beverage").append(`<td>${item}</td>`);
+        });
+        $(".Bread").click(function () {
+          let item = $(this).text();
+          $("#Bread").append(`<td>${item}</td>`);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3>Condiment (調味料類)</h3>
+    <p>
+      <button class="food Condiment">mustard</button>
+      <button class="food Condiment">tabasco</button>
+      <button class="food Condiment">caviar</button>
+      <button class="food Condiment">barbecue sauce</button>
+      <button class="food Condiment">ketchup</button>
+    </p>
+    <h3>Deli (熟食類)</h3>
+    <p>
+      <button class="food Deli">roast beef</button>
+      <button class="food Deli">turkey</button>
+      <button class="food Deli">Sandwiche</button>
+      <button class="food Deli">potato salad</button>
+      <button class="food Deli">potato Diane</button>
+    </p>
+    <h3>Beverage (咖啡茶飲類)</h3>
+    <p>
+      <button class="food Beverage">coffee</button>
+      <button class="food Beverage">herbal tea</button>
+      <button class="food Beverage">hot chocolate</button>
+      <button class="food Beverage">latte</button>
+      <button class="food Beverage">cafe au lait</button>
+      <button class="food Beverage">Con Panna</button>
+    </p>
+    <h3>Bread(麵包類)</h3>
+    <p>
+      <button class="food Bread">baguette</button>
+      <button class="food Bread">scone</button>
+      <button class="food Bread">cup cake</button>
+      <button class="food Bread">brownie</button>
+      <button class="food Bread">muffin</button>
+      <button class="food Bread">pretzel</button>
+      <button class="food Bread">pita</button>
+    </p>
+    <hr />
+    <h2>Your choices :</h2>
+
+    <!-- create a table -->
+    <table id="myTable" border="1">
+      <tr id="Condiment">
+        <th>Condiment</th>
+      </tr>
+      <tr id="Deli">
+        <th>Deli</th>
+      </tr>
+      <tr id="Beverage">
+        <th>Beverage</th>
+      </tr>
+      <tr id="Bread">
+        <th>Bread</th>
+      </tr>
+    </table>
+  </body>
+</html>
